@@ -2,6 +2,7 @@ services:
   book_catalog:
     build:
       context: ./book_catalog
+    image: $CONTAINER_REGISTRY/book_catalog:$VERSION
     container_name: book-catalog
     environment:
       DATABASE_URL: "postgresql://library_8pmx_user:E2SLyuvsUHUcLgjMxXbx6mGSfNpU4y6Y@dpg-cs0e3ga3esus7390ovvg-a.oregon-postgres.render.com/library_8pmx"
@@ -11,6 +12,7 @@ services:
   inventory_management:
     build:
       context: ./inventory_management
+    image: $CONTAINER_REGISTRY/inventory_management:$VERSION
     container_name: inventory-management
     environment:
       DATABASE_URL: "postgresql://library_8pmx_user:E2SLyuvsUHUcLgjMxXbx6mGSfNpU4y6Y@dpg-cs0e3ga3esus7390ovvg-a.oregon-postgres.render.com/library_8pmx"
