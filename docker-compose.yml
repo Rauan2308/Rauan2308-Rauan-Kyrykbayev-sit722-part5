@@ -1,0 +1,18 @@
+services:
+  book_catalog:
+    build:
+      context: ./book_catalog
+    container_name: book-catalog
+    environment:
+      DATABASE_URL: "postgresql://library_8pmx_user:E2SLyuvsUHUcLgjMxXbx6mGSfNpU4y6Y@dpg-cs0e3ga3esus7390ovvg-a.oregon-postgres.render.com/library_8pmx"
+    ports:
+      - "4000:4000"
+  
+  inventory_management:
+    build:
+      context: ./inventory_management
+    container_name: inventory-management
+    environment:
+      DATABASE_URL: "postgresql://library_8pmx_user:E2SLyuvsUHUcLgjMxXbx6mGSfNpU4y6Y@dpg-cs0e3ga3esus7390ovvg-a.oregon-postgres.render.com/library_8pmx"
+    ports:
+      - "4001:4001"
