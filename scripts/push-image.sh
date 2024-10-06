@@ -17,8 +17,6 @@ set -u # or set -o nounset
 : "$VERSION"
 : "$REGISTRY_UN"
 : "$REGISTRY_PW"
-echo $REGISTRY_PW | docker login $CONTAINER_REGISTRY --username $REGISTRY_UN --password-stdin
-echo "Container Registry: $CONTAINER_REGISTRY"
-echo "Version: $VERSION"
+echo $REGISTRY_PW | docker login $CONTAINER_REGISTRY --username $REGISTRY_UN
 docker push $CONTAINER_REGISTRY/book_catalog:$VERSION
 docker push $CONTAINER_REGISTRY/inventory_management:$VERSION
