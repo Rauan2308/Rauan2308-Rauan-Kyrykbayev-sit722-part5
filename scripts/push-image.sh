@@ -12,14 +12,12 @@
 #
 #       ./scripts/push-image.sh
 #
-
 set -u # or set -o nounset
 : "$CONTAINER_REGISTRY"
 : "$VERSION"
 : "$REGISTRY_UN"
 : "$REGISTRY_PW"
-
-echo $REGISTRY_PW | docker login $CONTAINER_REGISTRY --username $REGISTRY_UN -p
+echo $REGISTRY_PW | docker login $CONTAINER_REGISTRY --username $REGISTRY_UN --password-stdin
 echo "Container Registry: $CONTAINER_REGISTRY"
 echo "Version: $VERSION"
 docker push $CONTAINER_REGISTRY/book_catalog:$VERSION
