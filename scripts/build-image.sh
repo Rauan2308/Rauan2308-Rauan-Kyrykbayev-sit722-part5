@@ -13,5 +13,6 @@
 set -u # or set -o nounset
 : "$CONTAINER_REGISTRY"
 : "$VERSION"
+docker-compose build
 docker build -t $CONTAINER_REGISTRY/book_catalog:$VERSION ./book_catalog
 docker build -t $CONTAINER_REGISTRY/inventory_management:$VERSION ./inventory_management
